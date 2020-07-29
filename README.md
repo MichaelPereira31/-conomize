@@ -1,2 +1,3 @@
-# -conomize
-&amp;conomize é um ajudante de controle de despesas.
+# Economize
+
+Organize suas contas de forma simples e pratica.
