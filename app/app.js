@@ -1,6 +1,5 @@
 // Carregando modulos
-  const express = require('express')
-  const handlebars = require('express-handlebars')
+  const express = require('express'
   const bodyParser = require('body-parser')
   const contas = require('./routes/contas')
   const path = require('path')
@@ -14,10 +13,6 @@
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
 
-  // Handlebars
-    app.engine('handlebars', handlebars({defaultLayout: 'main'}));
-    app.set('view engine', 'handlebars');
-
   // Mongoose
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/economize', {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
@@ -30,7 +25,7 @@
 
 // Rotas
   app.use('/contas', contas)
-  
+
 // Outro
   const PORT = 8081
   app.listen(PORT, () => {
