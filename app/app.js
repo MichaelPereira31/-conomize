@@ -1,5 +1,5 @@
 // Carregando modulos
-  const express = require('express'
+  const express = require('express')
   const bodyParser = require('body-parser')
   const contas = require('./routes/contas')
   const path = require('path')
