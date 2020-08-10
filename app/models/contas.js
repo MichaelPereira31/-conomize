@@ -18,7 +18,7 @@ const Contas = new Schema({
     type: Number,
     required: true
   },
-  vendedor: {
+  loja: {
     type: String,
     required: true
   },
@@ -26,9 +26,13 @@ const Contas = new Schema({
     type: Number,
     require: true
   },
-  pago: {
+  total_pago: {
     type: Number,
     default: 0
+  },
+  pago: {
+    type: Boolean,
+    default: false
   },
   adicionado_em: {
     type: Date,
