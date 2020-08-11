@@ -4,6 +4,7 @@
   const contas = require('./routes/contas')
   const path = require('path')
   const mongoose = require('mongoose')
+  const db = require('./config/db')
 
 
   const app = express()
@@ -15,7 +16,7 @@
 
   // Mongoose
     mongoose.Promise = global.Promise;
-    mongoose.connect('mongodb://localhost/economize', {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
+    mongoose.connect(db.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
       console.log("DataBase Connected!");
     }).catch((err) => {
       console.log("Error: "+err);
@@ -27,7 +28,7 @@
   app.use('/contas', contas)
 
 // Outro
-  const PORT = 8081
+  const PORT = process.env.PORT || 8081
   app.listen(PORT, () => {
     console.log("Servidor rodando! ")
   })

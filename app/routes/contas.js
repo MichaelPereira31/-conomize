@@ -1,11 +1,12 @@
 const express = require('express')
-const router = express.Router()
 const mongoose = require('mongoose')
 require("../models/contas")
 const Contas = mongoose.model('contas')
 
-router.get('/', (req, res) => {
-  Contas.find().lean().then((contas) => {
+const router = express.Router()
+
+router.get('/:id', (req, res) => {
+  Contas.find({id_comprador:req.params.id}).lean().then((contas) => {
     res.json(contas);
   }).catch((err) => {
     res.send('Error: '+err)
