@@ -2,9 +2,12 @@
   const express = require('express')
   const bodyParser = require('body-parser')
   const contas = require('./routes/contas')
+  const users = require('./routes/users')
   const path = require('path')
   const mongoose = require('mongoose')
   const db = require('./config/db')
+
+  
 
 
   const app = express()
@@ -26,6 +29,7 @@
 
 // Rotas
   app.use('/contas', contas)
+  app.use('/users',users)
 
 // Outro
   const PORT = process.env.PORT || 8081
